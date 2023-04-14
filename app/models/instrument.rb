@@ -3,9 +3,13 @@ class Instrument < ApplicationRecord
   belongs_to :user, optional: true
   has_many :line_items
 
-  has_one_attached :image
-  def image_as_thumbnail
-    image.variant(resize_to_limit: [400,300]).processed
+  # has_one_attached :image
+  # def image_as_thumbnail
+  #   image.variant(resize_to_limit: [400,300]).processed
+  # end
+
+  has_one_attached :image do |attachable|
+    attachable.variant :thumb, resize_to_limit: [100, 100]
   end
 
   validates :title, :brand, :price, :model, presence: true

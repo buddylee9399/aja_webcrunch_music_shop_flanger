@@ -25,6 +25,7 @@ gem 'gravatar_image_tag'
 ```
 - brew install imagemagick
 - I COULDNT INSTALL IMAGEMAGICK ON LAPTOP SO VARIANTS DIDNT WORK
+- I WAS ABLE TO INSTALL IT IN THE M1 laptop
 - rails g simple_form:install
 - rails g devise:install
 - rails g devise:views

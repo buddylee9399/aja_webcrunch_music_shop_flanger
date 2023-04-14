@@ -1,9 +1,9 @@
 <div class="columns">
   <div class="column is-8 is-centered">
 
-    <%= simple_form_for @instrument, html: { multipart: true } do |f| %>
+    <%= simple_form_for @instrument, data: {turbo: false}, html: { multipart: true } do |f| %>
       <%= f.error_notification %>
-
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="columns">
 
           <div class="field column is-9">
